@@ -1,0 +1,14 @@
+{
+  "name": "@mio/functions",
+  "version": "0.1.0",
+  "description": "A share functions",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5"
+  }
+}

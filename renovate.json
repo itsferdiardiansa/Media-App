@@ -1,0 +1,33 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "automerge": true,
+  "schedule": [
+    "before 2am on Saturday"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["node", "npm"],
+      "enabled": false
+    },
+    {
+      "matchPackageNames": ["@types/node"],
+      "allowedVersions": "^14"
+    },
+    {
+      "groupName": "Mio packages",
+      "matchPackagePrefixes": [
+        "@mio/"
+      ],
+      "enabled": false
+    }
+  ],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/test/**",
+    "**/tests/**",
+    "**/workflows/**"
+  ]
+}

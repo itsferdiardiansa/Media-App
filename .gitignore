@@ -1,0 +1,96 @@
+# Node.js
+node_modules/
+.pnpm-debug.log*
+.npm/
+*.log
+*.lock
+
+# PNPM
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+coverage.json
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Testing
+coverage/
+*.lcov
+
+# Build outputs
+dist/
+build/
+out/
+.tmp/
+.temp/
+
+# TypeScript
+*.tsbuildinfo
+
+# NestJS
+/apps/**/node_modules/
+/apps/**/dist/
+/packages/**/dist/
+nestjs-cli.json
+
+# Husky
+.husky/_
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# NX
+.nx/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+Dockerfile
+Dockerfile.*
+
+# ESLint and Prettier
+.eslintcache
+.prettierignore
+*.eslintcache
+
+# Jest
+.jest/
+jest.config.js
+jest.config.ts
+coverage/
+__tests__/__snapshots__/
+__tests__/__image_snapshots__/
+
+# Git temporary files
+*~
+*.un~
+**/*~
+**/*.un~
+
+# Miscellaneous
+Thumbs.db
+desktop.ini
+.vscode/*
+node_modules/
+docs/
