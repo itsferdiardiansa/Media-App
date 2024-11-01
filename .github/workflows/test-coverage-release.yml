@@ -3,16 +3,16 @@ on:
   pull_request_target:
     branches:
       - main
-    paths:
-      - "release/**"
-      - "feat/**"
-      - "feature/**"
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - ready_for_review
-      - synchronize
+    # paths:
+    #   - "release/**"
+    #   - "feat/**"
+    #   - "feature/**"
+    # types:
+    #   - opened
+    #   - reopened
+    #   - synchronize
+    #   - ready_for_review
+    #   - synchronize
 jobs:
   test-coverage:
     runs-on: ubuntu-latest
