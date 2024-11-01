@@ -3,18 +3,10 @@ on:
   pull_request_target:
     branches:
       - main
-    # paths:
-    #   - "release/**"
-    #   - "feat/**"
-    #   - "feature/**"
-    # types:
-    #   - opened
-    #   - reopened
-    #   - synchronize
-    #   - ready_for_review
+
 env:
   NODE_VERSION: '21'
-  PNPM_VERSION: '9' 
+  PNPM_VERSION: '9'
 
 jobs:
   test-coverage:
@@ -49,8 +41,8 @@ jobs:
       - name: Upload coverage reports artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ vars.COVERAGE_NAME }}
-          path: ${{ vars.COVERAGE_PATH }}
+          name: mio-coverage-reports
+          path: ./coverage
   
   upload-coverage:
     runs-on: ubuntu-latest
@@ -63,13 +55,13 @@ jobs:
       - name: Download coverage reports artifact
         uses: actions/download-artifact@v3
         with:
-          name: ${{ vars.COVERAGE_NAME }}
-          path: ${{ vars.COVERAGE_PATH }}
+          name: mio-coverage-reports
+          path: ./coverage
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         env:
           slug: itsferdiardiansa/MediaApp
         with:
-          files: ${{ vars.COVERAGE_FILE_JSON }}
+          files: ./coverage/merged-coverage.json
           token: ${{ secrets.CODECOV_TOKEN }}
