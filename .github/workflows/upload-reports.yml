@@ -12,6 +12,4 @@ permissions:
   contents: read
 jobs:
   upload-main-coverage:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/wc-upload-coverage.yml
+    uses: ./.github/workflows/wc-upload-coverage.yml
