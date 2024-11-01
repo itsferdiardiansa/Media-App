@@ -1,20 +1,23 @@
 name: Test coverage and release
+
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
-    # paths:
-    #   - "release/**"
-    #   - "feat/**"
-    #   - "feature/**"
-    # types:
-    #   - opened
-    #   - reopened
-    #   - synchronize
-    #   - ready_for_review
-    #   - synchronize
+    paths-ignore:
+      - '**'
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+env:
+  NODE_VERSION: '21'
+  PNPM_VERSION: '9'
+
 jobs:
   test-coverage:
+    if: startsWith(github.head_ref, 'release/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -42,7 +45,7 @@ jobs:
 
       - name: Run test coverage
         run: pnpm run test:coverage
-      
+
       - name: Upload coverage reports artifact
         uses: actions/upload-artifact@v4
         with:
@@ -62,8 +65,9 @@ jobs:
         with:
           name: ${{ vars.COVERAGE_NAME }}
           path: ${{ vars.COVERAGE_PATH }}
-          run_id: ${{ github.event.workflow_run.id }}
+          run_id: ${{ github.run_id }}
           search_artifacts: true
+          workflow: test-coverage-release.yml
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
