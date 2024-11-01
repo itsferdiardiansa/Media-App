@@ -59,11 +59,11 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: mio-coverage-reports
-          path: ./
+          path: ./coverage
 
       - name: Verify Downloaded Coverage Directory Contents
         if: always()
-        run: ls -R ./
+        run: ls -R ./coverage
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
