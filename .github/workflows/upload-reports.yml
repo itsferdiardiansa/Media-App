@@ -11,5 +11,5 @@ on:
 permissions:
   contents: read
 jobs:
-  upload-main-coverage:
+  main-branch-coverage-upload:
     uses: ./.github/workflows/wc-upload-coverage.yml

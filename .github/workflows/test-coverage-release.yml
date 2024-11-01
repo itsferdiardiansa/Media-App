@@ -50,6 +50,6 @@ jobs:
           name: ${{ vars.COVERAGE_NAME }}
           path: ${{ vars.COVERAGE_PATH }}
   
-  upload-coverage:
+  main-coverage-sync:
     needs: test-coverage
     uses: ./.github/workflows/wc-upload-coverage.yml
