@@ -61,6 +61,7 @@ jobs:
           name: mio-coverage-reports
           path: ./coverage
           search_artifacts: true
+          workflow: test-coverage-release.yml
 
       - name: List Downloaded Files
         if: always()
