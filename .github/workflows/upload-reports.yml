@@ -1,0 +1,17 @@
+name: Upload Main Coverage Reports
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "**.json"
+      - "docs/**"
+  schedule:
+    - cron: "0 0 * * 0"
+permissions:
+  contents: read
+jobs:
+  upload-main-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./github/workflows/wc-upload-coverage.yml
