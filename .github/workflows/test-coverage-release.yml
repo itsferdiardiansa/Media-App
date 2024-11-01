@@ -58,7 +58,7 @@ jobs:
       - name: Attempt to Download coverage reports artifact
         uses: dawidd6/action-download-artifact@v3
         with:
-          artifact_name: mio-coverage-reports
+          name: mio-coverage-reports
           path: ./coverage
           search_artifacts: true
 
