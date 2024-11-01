@@ -54,4 +54,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: test-coverage
     steps:
-      - uses: ./github/workflows/wc-upload-coverage.yml
+      - uses: ./.github/workflows/wc-upload-coverage.yml
