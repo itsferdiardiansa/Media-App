@@ -40,7 +40,7 @@ jobs:
 
       - name: List Coverage Directory Contents
         run: ls -R ./coverage
-      
+
       - name: Upload coverage reports artifact
         uses: actions/upload-artifact@v4
         with:
@@ -55,20 +55,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download coverage reports artifact
-        uses: actions/download-artifact@v3
+      - name: Attempt to Download coverage reports artifact
+        uses: dawidd6/action-download-artifact@v3
         with:
-          name: mio-coverage-reports
+          artifact_name: mio-coverage-reports
           path: ./coverage
+          search_artifacts: true
 
-      - name: Verify Downloaded Coverage Directory Contents
+      - name: List Downloaded Files
         if: always()
-        run: ls -R ./coverage
+        run: ls -R ./
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         env:
           slug: itsferdiardiansa/MediaApp
         with:
-          files: ./coverage/coverage-final.json
+          files: ./coverage/merged-coverage.json
           token: ${{ secrets.CODECOV_TOKEN }}
