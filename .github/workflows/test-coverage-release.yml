@@ -50,8 +50,6 @@ jobs:
           name: ${{ vars.COVERAGE_NAME }}
           path: ${{ vars.COVERAGE_PATH }}
   
-  upload-coverage:
-    runs-on: ubuntu-latest
+  main-coverage-sync:
     needs: test-coverage
-    steps:
-      - uses: ./.github/workflows/wc-upload-coverage.yml
+    uses: ./.github/workflows/wc-upload-coverage.yml
