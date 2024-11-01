@@ -6,7 +6,7 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],
   coverageDirectory: '<rootDir>/coverage',
-  
+
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
     '<rootDir>/dist/',
@@ -21,12 +21,10 @@ module.exports = {
     '/jest.config.js',
     '/eslint.config.js',
   ],
-  
-  transformIgnorePatterns: [
-    '/node_modules/(?!(MODULE_NAME_1|MODULE_NAME_2)/)',
-  ],
+
+  transformIgnorePatterns: ['/node_modules/(?!(MODULE_NAME_1|MODULE_NAME_2)/)'],
 
   moduleNameMapper: {
-    '\\.(css|scss|sass)$': 'identity-obj-proxy'
+    '\\.(css|scss|sass)$': 'identity-obj-proxy',
   },
 }

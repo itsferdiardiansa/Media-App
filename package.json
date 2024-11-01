@@ -19,8 +19,11 @@
     "format:check": "prettier --check 'apps/**/*.{js,ts}' 'packages/**/*.{js,ts}'",
     "test": "jest --passWithNoTests",
     "test:watch": "pnpm run test --watch",
+    "test:apps": "pnpm run test --selectProjects apps",
+    "test:packages": "pnpm run test --selectProjects packages",
+    "test:coverage": "bash ./scripts/ci/test-coverage.sh",
     "type-check": "tsc --noEmit",
-    "clean": "rm -rf apps/**/{dist,build} packages/**/{dist,build}",
+    "clean": "bash ./scripts/cleanup/clean.sh",
     "validate": "pnpm lint && pnpm type-check && pnpm format:check && pnpm test"
   },
   "dependencies": {},

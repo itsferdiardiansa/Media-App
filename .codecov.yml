@@ -1,0 +1,11 @@
+comment:
+  layout: 
+    - "title"
+    - "diff"
+    - "files"
+    - "footer"
+  behavior: default
+  require_changes: false
+  after_n_builds: 1
+  title: "## Mio Coverage Reports 📊"
+  footer: "View the [full report on Codecov]({{ report_url }}) for more details."

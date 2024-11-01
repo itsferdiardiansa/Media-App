@@ -1,0 +1,20 @@
+{
+  "name": "@mio/config-jest",
+  "version": "1.0.0",
+  "description": "A configuration for jest",
+  "main": "index.js",
+  "keywords": [
+    "jest"
+  ],
+  "author": {
+    "email": "ferdiardiansa@gmail.com",
+    "name": "ferdiardiansa",
+    "url": "https://github.com/itsferdiardiansa"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.js"
+    }
+  }
+}
