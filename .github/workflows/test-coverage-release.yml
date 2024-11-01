@@ -55,14 +55,20 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: List All Available Artifacts
+        run: |
+          echo "Artifacts available for download:"
+          gh run view --log --json artifacts -q '.artifacts[].name'
+
       - name: Download coverage reports artifact
         uses: actions/download-artifact@v3
         with:
           name: mio-coverage-reports
-          path: ./coverage
+          path: ./
 
-      - name: List Downloaded Coverage Directory Contents
-        run: ls -R ./coverage
+      - name: Verify Downloaded Coverage Directory Contents
+        if: always()
+        run: ls -R ./
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
