@@ -7,7 +7,6 @@ on:
 env:
   NODE_VERSION: '21'
   PNPM_VERSION: '9'
-  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   test-coverage:
@@ -55,13 +54,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
-      - name: List All Available Artifacts
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "Artifacts available for download:"
-          gh run view --log --json artifacts -q '.artifacts[].name'
 
       - name: Download coverage reports artifact
         uses: actions/download-artifact@v3
