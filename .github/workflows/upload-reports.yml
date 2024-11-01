@@ -1,15 +1,16 @@
 name: Upload Main Coverage Reports
 on:
+  workflow_run:
+    workflows: ["Test coverage"]
+    types: 
+      - completed
   push:
     branches:
       - main
     paths-ignore:
       - "**.json"
       - "docs/**"
-  schedule:
-    - cron: "0 0 * * 0"
-permissions:
-  contents: read
 jobs:
   main-branch-coverage-upload:
     uses: ./.github/workflows/wc-upload-coverage.yml
+    secrets: inherit
