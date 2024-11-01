@@ -1,4 +1,4 @@
 {
-  "temp-dir": "./.nyc_reports",
+  "temp-dir": "./coverage/temp",
   "reporter": ["lcov", "json"]
 }

@@ -1,0 +1,70 @@
+name: Test coverage and release
+on:
+  pull_request_target:
+    branches:
+      - main
+    paths:
+      - "release/**"
+      - "feat/**"
+      - "feature/**"
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - synchronize
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Cache pnpm Store
+        uses: actions/cache@v3
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install pnpm
+        run: npm install -g pnpm@${{ env.PNPM_VERSION }}
+
+      - name: Run test coverage
+        run: pnpm run test:coverage
+      
+      - name: Upload coverage reports artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ vars.COVERAGE_NAME }}
+          path: ${{ vars.COVERAGE_PATH }}
+  
+  upload-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Download coverage reports artifact
+        uses: dawidd6/action-download-artifact@v3
+        with:
+          name: ${{ vars.COVERAGE_NAME }}
+          path: ${{ vars.COVERAGE_PATH }}
+          run_id: ${{ github.event.workflow_run.id }}
+          search_artifacts: true
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        env:
+          slug: itsferdiardiansa/MediaApp
+        with:
+          files: ${{ vars.COVERAGE_FILE_JSON }}
+          token: ${{ secrets.CODECOV_TOKEN }}

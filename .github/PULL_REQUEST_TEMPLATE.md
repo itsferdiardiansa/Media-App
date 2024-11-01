@@ -6,6 +6,7 @@
 - [ ] **Test**: Additions or modifications to tests
 - [ ] **Refactoring**: Code structure or efficiency improvements without adding new features
 - [ ] **Enhancement / Improvement**: Feature enhancements or improvements
+- [ ] **Bugs Fixing**: Bug(s) fixing either on apps or packages
 - [ ] **Others**
 
 ## Description
