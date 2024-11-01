@@ -37,6 +37,9 @@ jobs:
 
       - name: Run test coverage
         run: pnpm run test:coverage
+
+      - name: List Coverage Directory Contents
+        run: ls -R ./coverage
       
       - name: Upload coverage reports artifact
         uses: actions/upload-artifact@v4
@@ -52,16 +55,25 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: List All Available Artifacts
+        run: |
+          echo "Artifacts available for download:"
+          gh run view --log --json artifacts -q '.artifacts[].name'
+
       - name: Download coverage reports artifact
         uses: actions/download-artifact@v3
         with:
           name: mio-coverage-reports
-          path: ./coverage
+          path: ./
+
+      - name: Verify Downloaded Coverage Directory Contents
+        if: always()
+        run: ls -R ./
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         env:
           slug: itsferdiardiansa/MediaApp
         with:
-          files: ./coverage/merged-coverage.json
+          files: ./coverage/coverage-final.json
           token: ${{ secrets.CODECOV_TOKEN }}
