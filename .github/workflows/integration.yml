@@ -2,30 +2,23 @@ name: Test, lint and type-check 👀
 
 on:
   push:
-    branches-ignore:
-      - main
-      - release
-      - release-*
-      - release/**
-  pull_request:
-    branches-ignore:
-      - main
-      - release
-      - release-*
-      - release/**
+    branches:
+      - feat/*
+      - fix/*
+      - refactor/*
+      - release/*
+      - hotfix/*
+      - ci/*
+      - chore/*
 
 env:
-  NODE_VERSION: 18
-  PNPM_VERSION: 7
+  NODE_VERSION: 21
+  PNPM_VERSION: 9
   ACTIONS_STEP_DEBUG: true
 
 jobs:
   install:
     runs-on: ubuntu-latest
-    env:
-      NODE_VERSION: 18
-      PNPM_VERSION: 7
-      ACTIONS_STEP_DEBUG: true
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2

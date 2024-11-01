@@ -12,8 +12,8 @@ on:
       - synchronize
 
 env:
-  NODE_VERSION: '21'
-  PNPM_VERSION: '9'
+  NODE_VERSION: 21
+  PNPM_VERSION: 9
 
 jobs:
   test-coverage:
