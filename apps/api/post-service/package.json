@@ -31,7 +31,7 @@
     "@nestjs/core": "^10.4.6",
     "@nestjs/jwt": "^10.2.0",
     "@nestjs/passport": "^10.0.3",
-    "@prisma/client": "5.21.1",
+    "@prisma/client": "5.22.0",
     "aws-cdk-lib": "^2.165.0",
     "cache-manager": "^6.1.2",
     "cache-manager-ioredis": "^2.1.0",
