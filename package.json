@@ -4,11 +4,6 @@
   "license": "MIT",
   "type": "module",
   "private": true,
-  "author": {
-    "email": "ferdiardiansa@gmail.com",
-    "name": "ferdiardiansa",
-    "url": "https://github.com/itsferdiardiansa"
-  },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
