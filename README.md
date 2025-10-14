@@ -1,9 +1,9 @@
 
-# Media Application Monorepo 📸
+# Media Application Monorepo
 
 A scalable, containerized, and serverless media application built using a modern tech stack. This monorepo structure simplifies development, testing, and deployment.
 
-## Tech Stack 🚀
+## Tech Stack
 
 | Dependency       | Description                                                                                                           |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -19,7 +19,7 @@ A scalable, containerized, and serverless media application built using a modern
 
 ---
 
-## Prerequisites 🔧
+## Prerequisites
 
 | Tool                    | Version      |
 | ----------------------- | ------------ |
@@ -31,9 +31,9 @@ A scalable, containerized, and serverless media application built using a modern
 
 ---
 
-## Getting Started 🛠️
+## Getting Started
 
-### Project Structure 📂
+### Project Structure
 
 ```plaintext
 media-app/
@@ -47,7 +47,7 @@ media-app/
 └── pnpm-workspace.yaml   # pnpm workspace configuration
 ```
 
-### Installation 📝
+### Installation
 
 1. **Clone the repository**:
 
@@ -91,7 +91,7 @@ media-app/
    Commands to run docker here...
    ```
 
-### Running Tests ✅
+### Running Tests
 
 Use Nx to run tests for each application:
 
@@ -99,7 +99,7 @@ Use Nx to run tests for each application:
 Commands to run the test here...
 ```
 
-### Deployment 🚀
+### Deployment
 
 The project uses **GitHub Actions** for CI/CD. Any push to the `main` branch triggers a workflow to:
 
@@ -114,13 +114,13 @@ To manually deploy the SST stack to AWS:
 Command to deploy here...
 ```
 
-## License 📜
+## License
 
 This project is licensed under the MIT License.
 
 ---
 
-## Additional Notes 📘
+## Additional Notes
 
 - **Nx Monorepo**: Nx makes managing multiple apps and libraries easier, all in a single repo.
 - **pnpm Workspace**: Efficient dependency management, speeding up installation and reducing duplicate packages.
