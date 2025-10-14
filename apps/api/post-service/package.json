@@ -2,11 +2,6 @@
   "name": "@mio/post-service",
   "version": "0.1.0",
   "description": "Post service for media app",
-  "author": {
-    "email": "ferdiardiansa@gmail.com",
-    "name": "ferdiardiansa",
-    "url": "https://github.com/itsferdiardiansa"
-  },
   "private": true,
   "license": "MIT",
   "scripts": {
