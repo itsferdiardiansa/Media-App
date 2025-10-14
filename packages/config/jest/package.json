@@ -6,11 +6,6 @@
   "keywords": [
     "jest"
   ],
-  "author": {
-    "email": "ferdiardiansa@gmail.com",
-    "name": "ferdiardiansa",
-    "url": "https://github.com/itsferdiardiansa"
-  },
   "exports": {
     ".": {
       "import": "./index.js",
